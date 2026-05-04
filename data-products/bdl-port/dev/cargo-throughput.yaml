@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-port-dev-cargo-throughput
+  title: Cargo Throughput (Port - Dev)
+  description: 'Cargo throughput - MMTPA by port, commodity, month.
+
+    Consumers: Commercial, CEO
+
+    Business: Ports and SEZ | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - port
+  - logistics
+  - operations
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 8 AM IST
+  links:
+  - url: https://adb-bdl-port-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-port-team
+  system: bdl-port
+  dependsOn:
+  - resource:bdl-port-dev-workspace

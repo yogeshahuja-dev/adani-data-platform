@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-port-prod-cargo-dashboard
+  title: Cargo Dashboard (Port - Prod)
+  description: 'Cargo analytics - throughput, commodity mix, customers.
+
+    Audience: Commercial, Sales
+
+    Business: Ports and SEZ | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - port
+  - logistics
+  - reporting
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: Commercial, Sales
+  links:
+  - url: https://adb-bdl-port-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-port-team
+  system: bdl-port
+  dependsOn:
+  - resource:bdl-port-prod-workspace

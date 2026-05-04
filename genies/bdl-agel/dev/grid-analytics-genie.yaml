@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-dev-grid-analytics-genie
+  title: Grid Analytics Genie (AGEL - Dev)
+  description: 'AI agent for Grid - injection, curtailment, frequency, voltage.
+
+    Business: Adani Green Energy (AGEL) | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - agel
+  - green-energy
+  - grid
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: grid
+  links:
+  - url: https://adb-bdl-agel-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-dev-workspace

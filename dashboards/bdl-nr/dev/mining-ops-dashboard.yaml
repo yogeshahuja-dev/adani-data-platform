@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-dev-mining-ops-dashboard
+  title: Mining Operations Dashboard (NR - Dev)
+  description: 'Real-time mining ops - production, equipment, workforce, safety.
+
+    Audience: Mine Managers, COO
+
+    Business: Natural Resources (NR) | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - nr
+  - natural-resources
+  - reporting
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: Mine Managers, COO
+  links:
+  - url: https://adb-bdl-nr-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-dev-workspace

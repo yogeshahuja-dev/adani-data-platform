@@ -1,0 +1,124 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: edl-platform-team
+  description: Central EDL Platform Team - Manages shared infrastructure and governance across all Adani businesses
+spec:
+  type: organization
+  children:
+    - edl-corp-group-it-team
+    - bdl-nr-team
+    - bdl-cements-team
+    - bdl-hr-team
+    - bdl-agel-team
+    - bdl-port-team
+    - bdl-realty-team
+    - bdl-ailabs-team
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: edl-corp-group-it-team
+  description: Corp Group IT - Finance, Procurement, Compliance, Audit
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-nr-team
+  description: Adani Natural Resources (NR) - Mining Operations, Resource Exploration, Production
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-cements-team
+  description: Adani Cements - Plant Operations, Supply Chain, Quality Control
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-hr-team
+  description: Adani Group HR - Workforce Management, Recruitment, Payroll, L&D
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-agel-team
+  description: Adani Green Energy (AGEL) - Solar & Wind Generation, Grid, Sustainability
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-port-team
+  description: Adani Ports & SEZ - Vessel Operations, Cargo, Berth Planning
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-realty-team
+  description: Adani Realty - Real Estate Sales, Construction, Leasing
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-ailabs-team
+  description: Adani AI Labs - ML Ops, Model Registry, Research & Experiments
+spec:
+  type: team
+  parent: edl-platform-team
+  children: []
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: guest
+spec:
+  memberOf: [edl-platform-team]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: yogeshahuja-dev
+spec:
+  profile:
+    displayName: Yogesh Ahuja
+    email: yogesh.ahuja@adani.com
+  memberOf: [edl-platform-team]

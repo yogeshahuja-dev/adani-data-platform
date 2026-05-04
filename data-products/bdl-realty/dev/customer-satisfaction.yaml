@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-dev-customer-satisfaction
+  title: Customer Satisfaction (Realty - Dev)
+  description: 'Customer satisfaction - NPS, complaint resolution, quality.
+
+    Consumers: CX Team, CEO
+
+    Business: Realty | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - realty
+  - real-estate
+  - cx
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Monthly refresh
+  links:
+  - url: https://adb-bdl-realty-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-dev-workspace

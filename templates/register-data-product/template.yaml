@@ -1,0 +1,99 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: register-data-product
+  title: Register New Data Product
+  description: Register a new Data Product in the catalog. Select the business system, workspace, and data product details.
+  tags:
+    - data-product
+    - register
+spec:
+  owner: edl-platform-team
+  type: data-product
+  parameters:
+    - title: Data Product Details
+      required:
+        - dpName
+        - dpTitle
+        - description
+        - businessSystem
+        - environment
+      properties:
+        dpName:
+          title: Data Product Identifier
+          type: string
+          description: Lowercase with hyphens only (e.g. vendor-360, generation-forecast)
+          pattern: '^[a-z0-9-]+$'
+        dpTitle:
+          title: Data Product Display Name
+          type: string
+          description: Human-readable name (e.g. Vendor 360, Generation Forecast)
+        description:
+          title: Description
+          type: string
+          ui:widget: textarea
+          description: What data does this product provide? Who consumes it?
+        businessSystem:
+          title: Business System
+          type: string
+          enum:
+            - edl-corp-group-it
+            - bdl-nr
+            - bdl-cements
+            - bdl-hr
+            - bdl-agel
+            - bdl-port
+            - bdl-realty
+            - bdl-ailabs
+          enumNames:
+            - EDL - Corp Group IT
+            - BDL - Natural Resources (NR)
+            - BDL - Cements
+            - BDL - Human Resources
+            - BDL - Adani Green Energy (AGEL)
+            - BDL - Ports and SEZ
+            - BDL - Realty
+            - BDL - AI Labs
+        environment:
+          title: Environment
+          type: string
+          enum:
+            - dev
+            - prod
+          enumNames:
+            - Development
+            - Production
+        domain:
+          title: Business Domain
+          type: string
+          description: e.g. procurement, finance, operations, generation
+        sla:
+          title: SLA
+          type: string
+          description: e.g. Data refreshed by 9 AM IST daily
+          default: Data refreshed by 9 AM IST daily
+        consumers:
+          title: Consumers
+          type: string
+          description: Who uses this data product? (e.g. Finance team, Trading desk)
+  steps:
+    - id: log
+      name: Log Registration
+      action: debug:log
+      input:
+        message: |
+          NEW DATA PRODUCT REGISTERED!
+          Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dpName }}
+          Title: ${{ parameters.dpTitle }}
+          System: ${{ parameters.businessSystem }}
+          Environment: ${{ parameters.environment }}
+          Domain: ${{ parameters.domain }}
+          SLA: ${{ parameters.sla }}
+          Consumers: ${{ parameters.consumers }}
+          Description: ${{ parameters.description }}
+        listWorkspace: true
+  output:
+    links:
+      - title: View All Data Products
+        icon: catalog
+        url: /catalog?filters[kind]=component&filters[type]=data-product

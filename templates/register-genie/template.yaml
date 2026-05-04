@@ -1,0 +1,89 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: register-genie
+  title: Register New Genie Agent
+  description: Register a new Databricks Genie AI Agent in the catalog. Select the business system and workspace environment.
+  tags:
+    - genie
+    - ai-agent
+    - register
+spec:
+  owner: edl-platform-team
+  type: genie
+  parameters:
+    - title: Genie Details
+      required:
+        - genieName
+        - genieTitle
+        - description
+        - businessSystem
+        - environment
+      properties:
+        genieName:
+          title: Genie Identifier
+          type: string
+          description: Lowercase with hyphens only (e.g. finance-genie, vessel-ops-genie)
+          pattern: '^[a-z0-9-]+$'
+        genieTitle:
+          title: Genie Display Name
+          type: string
+          description: Human-readable name (e.g. Finance Genie, Vessel Ops Genie)
+        description:
+          title: Description
+          type: string
+          ui:widget: textarea
+          description: What does this Genie do? What data can users query?
+        businessSystem:
+          title: Business System
+          type: string
+          enum:
+            - edl-corp-group-it
+            - bdl-nr
+            - bdl-cements
+            - bdl-hr
+            - bdl-agel
+            - bdl-port
+            - bdl-realty
+            - bdl-ailabs
+          enumNames:
+            - EDL - Corp Group IT
+            - BDL - Natural Resources (NR)
+            - BDL - Cements
+            - BDL - Human Resources
+            - BDL - Adani Green Energy (AGEL)
+            - BDL - Ports and SEZ
+            - BDL - Realty
+            - BDL - AI Labs
+        environment:
+          title: Environment
+          type: string
+          enum:
+            - dev
+            - prod
+          enumNames:
+            - Development
+            - Production
+        domain:
+          title: Domain
+          type: string
+          description: Business domain (e.g. finance, operations, analytics)
+  steps:
+    - id: log
+      name: Log Registration
+      action: debug:log
+      input:
+        message: |
+          NEW GENIE REGISTERED!
+          Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.genieName }}
+          Title: ${{ parameters.genieTitle }}
+          System: ${{ parameters.businessSystem }}
+          Environment: ${{ parameters.environment }}
+          Domain: ${{ parameters.domain }}
+          Description: ${{ parameters.description }}
+        listWorkspace: true
+  output:
+    links:
+      - title: View All Genies
+        icon: catalog
+        url: /catalog?filters[kind]=component&filters[type]=genie

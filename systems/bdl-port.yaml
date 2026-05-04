@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-port
+  title: BDL - Ports & SEZ
+  description: |
+    Business Data Lake for Adani Ports & Special Economic Zone.
+    Domains: Vessel Operations, Cargo Management, Berth Planning, Container Tracking.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - port
+    - logistics
+    - vessel
+    - cargo
+    - maritime
+  links:
+    - url: https://adb-bdl-port-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-port-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-port-team

@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-ailabs-dev-research-dashboard
+  title: Research Dashboard (AI Labs - Dev)
+  description: 'Research progress - experiments, models, team velocity.
+
+    Audience: Chief Scientist, Research Leads
+
+    Business: AI Labs | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - ailabs
+  - ml
+  - reporting
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: Chief Scientist, Research Leads
+  links:
+  - url: https://adb-bdl-ailabs-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-ailabs-team
+  system: bdl-ailabs
+  dependsOn:
+  - resource:bdl-ailabs-dev-workspace

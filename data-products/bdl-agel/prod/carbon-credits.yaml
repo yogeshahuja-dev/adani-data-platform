@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-prod-carbon-credits
+  title: Carbon Credits (AGEL - Prod)
+  description: 'Carbon credit tracking - CERs earned, retired, tradeable.
+
+    Consumers: Sustainability, Finance
+
+    Business: Adani Green Energy (AGEL) | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - agel
+  - green-energy
+  - sustainability
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Monthly refresh
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-prod-workspace

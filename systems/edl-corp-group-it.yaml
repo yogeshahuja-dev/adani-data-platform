@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: edl-corp-group-it
+  title: EDL - Corp Group IT
+  description: |
+    Enterprise Data Lake for Corporate Group IT.
+    Domains: Finance, Procurement, Compliance, Audit.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - edl
+    - corp-group-it
+    - finance
+    - procurement
+    - compliance
+  links:
+    - url: https://adb-2478587080594690.10.azuredatabricks.net/
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-3201531543632009.9.azuredatabricks.net/
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: edl-corp-group-it-team

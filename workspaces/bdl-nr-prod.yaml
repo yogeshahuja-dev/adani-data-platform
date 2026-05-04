@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-nr-prod-workspace
+  title: Natural Resources (NR) - Production Workspace
+  description: Production Databricks workspace for Natural Resources (NR). Adani Natural
+    Resources - Mining Operations, Exploration, Production.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - nr
+  - natural-resources
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-nr-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-nr-team
+  system: bdl-nr

@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-port-prod-cargo-genie
+  title: Cargo Genie (Port - Prod)
+  description: 'AI agent for Cargo - throughput, commodity mix, handling rates.
+
+    Business: Ports and SEZ | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - port
+  - logistics
+  - cargo
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: cargo
+  links:
+  - url: https://adb-bdl-port-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-port-team
+  system: bdl-port
+  dependsOn:
+  - resource:bdl-port-prod-workspace

@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: edl-corp-group-it-prod-workspace
+  title: Corp Group IT - Production Workspace
+  description: Production Databricks workspace for Corp Group IT. Corporate Group
+    IT - Finance, Procurement, Compliance.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - corp-group-it
+  - finance
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: prod
+  links:
+  - url: https://adb-corp-groupit-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it

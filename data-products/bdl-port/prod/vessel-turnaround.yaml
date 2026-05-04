@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-port-prod-vessel-turnaround
+  title: Vessel Turnaround (Port - Prod)
+  description: 'Vessel turnaround analytics by port, type, commodity.
+
+    Consumers: Port Ops, Commercial
+
+    Business: Ports and SEZ | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - port
+  - logistics
+  - operations
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-port-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-port-team
+  system: bdl-port
+  dependsOn:
+  - resource:bdl-port-prod-workspace

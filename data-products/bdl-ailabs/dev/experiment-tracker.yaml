@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-ailabs-dev-experiment-tracker
+  title: Experiment Tracker (AI Labs - Dev)
+  description: 'Experiment metadata - runs, parameters, metrics, artifacts.
+
+    Consumers: Data Scientists, ML Lead
+
+    Business: AI Labs | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - ailabs
+  - ml
+  - research
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily refresh
+  links:
+  - url: https://adb-bdl-ailabs-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-ailabs-team
+  system: bdl-ailabs
+  dependsOn:
+  - resource:bdl-ailabs-dev-workspace

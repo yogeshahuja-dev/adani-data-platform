@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-port-dev-vessel-ops-genie
+  title: Vessel Ops Genie (Port - Dev)
+  description: 'AI agent for Vessel Ops - schedules, ETAs, berth allocation.
+
+    Business: Ports and SEZ | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - port
+  - logistics
+  - vessel
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: vessel
+  links:
+  - url: https://adb-bdl-port-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-port-team
+  system: bdl-port
+  dependsOn:
+  - resource:bdl-port-dev-workspace

@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-realty-prod-workspace
+  title: Realty - Production Workspace
+  description: Production Databricks workspace for Realty. Adani Realty - Sales, Construction,
+    Leasing.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - realty
+  - real-estate
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-realty-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-realty-team
+  system: bdl-realty

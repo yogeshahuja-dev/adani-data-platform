@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: edl-corp-group-it-prod-vendor-360
+  title: Vendor 360 (Corp IT - Prod)
+  description: 'Unified vendor view - master data, spend, compliance, payments.
+
+    Consumers: Procurement, Finance, Compliance
+
+    Business: Corp Group IT | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - corp-group-it
+  - finance
+  - procurement
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 9 AM IST
+  links:
+  - url: https://adb-corp-groupit-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it
+  dependsOn:
+  - resource:edl-corp-group-it-prod-workspace

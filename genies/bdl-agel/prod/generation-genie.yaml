@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-prod-generation-genie
+  title: Generation Genie (AGEL - Prod)
+  description: 'AI agent for Generation - solar/wind output, forecast, PLF.
+
+    Business: Adani Green Energy (AGEL) | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - agel
+  - green-energy
+  - generation
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: generation
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-prod-workspace

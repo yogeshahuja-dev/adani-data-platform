@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-prod-mining-ops-genie
+  title: Mining Ops Genie (NR - Prod)
+  description: 'AI agent for Mining - production volumes, equipment, shift output.
+
+    Business: Natural Resources (NR) | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - nr
+  - natural-resources
+  - mining
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: mining
+  links:
+  - url: https://adb-bdl-nr-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-prod-workspace

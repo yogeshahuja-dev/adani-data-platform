@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: edl-corp-group-it-dev-procurement-genie
+  title: Procurement Genie (Corp IT - Dev)
+  description: 'AI agent for Procurement - PO status, vendor spend, contracts.
+
+    Business: Corp Group IT | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - corp-group-it
+  - finance
+  - procurement
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: procurement
+  links:
+  - url: https://adb-corp-groupit-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it
+  dependsOn:
+  - resource:edl-corp-group-it-dev-workspace

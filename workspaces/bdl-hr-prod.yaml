@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-hr-prod-workspace
+  title: Human Resources - Production Workspace
+  description: Production Databricks workspace for Human Resources. Adani Group HR
+    - Workforce, Recruitment, Payroll.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - hr
+  - workforce
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-hr-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-hr-team
+  system: bdl-hr

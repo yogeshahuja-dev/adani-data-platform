@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-prod-grid-injection
+  title: Grid Injection (AGEL - Prod)
+  description: 'Real-time grid injection - MW, frequency, voltage, curtailment.
+
+    Consumers: Grid Ops, SLDC
+
+    Business: Adani Green Energy (AGEL) | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - agel
+  - green-energy
+  - grid
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-prod-workspace

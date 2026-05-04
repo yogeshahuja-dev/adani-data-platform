@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-prod-tenant-genie
+  title: Tenant Genie (Realty - Prod)
+  description: 'AI agent for Tenants - lease status, renewals, complaints.
+
+    Business: Realty | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - realty
+  - real-estate
+  - leasing
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: leasing
+  links:
+  - url: https://adb-bdl-realty-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-prod-workspace

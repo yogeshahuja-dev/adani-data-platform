@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-ailabs
+  title: BDL - AI Labs
+  description: |
+    Business Data Lake for Adani AI Labs.
+    Domains: ML Ops, Model Registry, Experiment Tracking, Feature Store, Research.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - ailabs
+    - ml
+    - ai
+    - research
+    - mlops
+  links:
+    - url: https://adb-bdl-ailabs-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-ailabs-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-ailabs-team

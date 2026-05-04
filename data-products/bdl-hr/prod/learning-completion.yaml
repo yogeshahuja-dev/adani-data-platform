@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-hr-prod-learning-completion
+  title: Learning Completion (HR - Prod)
+  description: 'Training completion, skill gaps, certifications.
+
+    Consumers: L and D Team
+
+    Business: Human Resources | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - hr
+  - workforce
+  - learning
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Weekly refresh
+  links:
+  - url: https://adb-bdl-hr-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-hr-team
+  system: bdl-hr
+  dependsOn:
+  - resource:bdl-hr-prod-workspace

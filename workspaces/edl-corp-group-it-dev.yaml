@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: edl-corp-group-it-dev-workspace
+  title: Corp Group IT - Development Workspace
+  description: Development Databricks workspace for Corp Group IT. Corporate Group
+    IT - Finance, Procurement, Compliance.
+  tags:
+  - databricks
+  - workspace
+  - dev
+  - corp-group-it
+  - finance
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: dev
+  links:
+  - url: https://adb-corp-groupit-dev.azuredatabricks.net
+    title: Open Development Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it

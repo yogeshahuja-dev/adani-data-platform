@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-cements
+  title: BDL - Cements
+  description: |
+    Business Data Lake for Adani Cements.
+    Domains: Plant Operations, Supply Chain, Quality Control, Energy.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - cements
+    - manufacturing
+    - plant-ops
+    - supply-chain
+  links:
+    - url: https://adb-bdl-cements-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-cements-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-cements-team

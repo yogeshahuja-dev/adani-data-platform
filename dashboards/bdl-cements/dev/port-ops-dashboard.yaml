@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-port-ops-dashboard
+  title: Port Operations Dashboard (Cements - Dev)
+  description: 'Real-time port operations — vessel movements, berth status, cargo
+    handling.
+
+    Audience: Port Director, Operations
+
+    Business: Cements | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - cements
+  - manufacturing
+  - reporting
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: Port Director, Operations
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

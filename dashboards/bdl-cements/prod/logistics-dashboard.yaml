@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-prod-logistics-dashboard
+  title: Logistics Dashboard (Cements - Prod)
+  description: 'Dispatch and logistics - fleet, delivery SLA, routes.
+
+    Audience: Logistics, Sales
+
+    Business: Cements | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - cements
+  - manufacturing
+  - reporting
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: Logistics, Sales
+  links:
+  - url: https://adb-bdl-cements-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-prod-workspace

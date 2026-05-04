@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-nr
+  title: BDL - Natural Resources (NR)
+  description: |
+    Business Data Lake for Adani Natural Resources.
+    Domains: Mining Operations, Resource Exploration, Production Analytics, Safety.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - nr
+    - natural-resources
+    - mining
+    - production
+  links:
+    - url: https://adb-bdl-nr-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-nr-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-nr-team

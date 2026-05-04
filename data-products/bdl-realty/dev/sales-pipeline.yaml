@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-dev-sales-pipeline
+  title: Sales Pipeline (Realty - Dev)
+  description: 'Sales pipeline - leads, site visits, bookings, registrations.
+
+    Consumers: Sales Heads, CEO
+
+    Business: Realty | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - realty
+  - real-estate
+  - sales
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 9 AM IST
+  links:
+  - url: https://adb-bdl-realty-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-dev-workspace

@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-ailabs-prod-feature-store
+  title: Feature Store (AI Labs - Prod)
+  description: 'Feature store - definitions, freshness, usage, lineage.
+
+    Consumers: ML Engineers, Data Scientists
+
+    Business: AI Labs | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - ailabs
+  - ml
+  - mlops
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-ailabs-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-ailabs-team
+  system: bdl-ailabs
+  dependsOn:
+  - resource:bdl-ailabs-prod-workspace

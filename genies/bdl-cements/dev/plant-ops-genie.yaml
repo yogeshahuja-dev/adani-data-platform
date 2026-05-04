@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-plant-ops-genie
+  title: Plant Ops Genie (Cements - Dev)
+  description: 'AI agent for Plant Ops - kiln status, production, downtime.
+
+    Business: Cements | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - cements
+  - manufacturing
+  - operations
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: operations
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

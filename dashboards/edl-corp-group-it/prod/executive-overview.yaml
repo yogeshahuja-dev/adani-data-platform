@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: edl-corp-group-it-prod-executive-overview
+  title: Executive Overview Dashboard (Corp IT - Prod)
+  description: 'Cross-functional KPIs for CXO - Finance, Procurement, Compliance.
+
+    Audience: CXO, Business Heads
+
+    Business: Corp Group IT | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - corp-group-it
+  - finance
+  - reporting
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: CXO, Business Heads
+  links:
+  - url: https://adb-corp-groupit-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it
+  dependsOn:
+  - resource:edl-corp-group-it-prod-workspace

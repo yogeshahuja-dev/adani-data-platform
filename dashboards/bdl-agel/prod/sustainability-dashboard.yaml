@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-prod-sustainability-dashboard
+  title: Sustainability Dashboard (AGEL - Prod)
+  description: 'ESG metrics - carbon avoided, renewable capacity, certificates.
+
+    Audience: CSO, Investors, Board
+
+    Business: Adani Green Energy (AGEL) | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - agel
+  - green-energy
+  - reporting
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: CSO, Investors, Board
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-prod-workspace

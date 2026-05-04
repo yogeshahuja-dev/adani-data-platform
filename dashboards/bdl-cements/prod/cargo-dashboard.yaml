@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-prod-cargo-dashboard
+  title: Cargo Dashboard (Cements - Prod)
+  description: 'Cargo analytics — throughput trends, commodity mix, customer concentration.
+
+    Audience: Commercial, Sales
+
+    Business: Cements | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - cements
+  - manufacturing
+  - reporting
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: Commercial, Sales
+  links:
+  - url: https://adb-bdl-cements-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-prod-workspace

@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-prod-safety-dashboard
+  title: Safety Dashboard (NR - Prod)
+  description: 'Safety performance - incidents, near-misses, training, scores.
+
+    Audience: Safety Team, Board
+
+    Business: Natural Resources (NR) | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - nr
+  - natural-resources
+  - reporting
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: Safety Team, Board
+  links:
+  - url: https://adb-bdl-nr-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-prod-workspace

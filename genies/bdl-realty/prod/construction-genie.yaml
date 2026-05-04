@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-prod-construction-genie
+  title: Construction Genie (Realty - Prod)
+  description: 'AI agent for Construction - progress, milestones, delays.
+
+    Business: Realty | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - realty
+  - real-estate
+  - construction
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: construction
+  links:
+  - url: https://adb-bdl-realty-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-prod-workspace

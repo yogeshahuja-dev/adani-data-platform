@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-port-dev-workspace
+  title: Ports and SEZ - Development Workspace
+  description: Development Databricks workspace for Ports and SEZ. Adani Ports - Vessel
+    Operations, Cargo, Berth Planning.
+  tags:
+  - databricks
+  - workspace
+  - dev
+  - port
+  - logistics
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: dev
+  links:
+  - url: https://adb-bdl-port-dev.azuredatabricks.net
+    title: Open Development Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-port-team
+  system: bdl-port

@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-cements-prod-workspace
+  title: Cements - Production Workspace
+  description: Production Databricks workspace for Cements. Adani Cements - Plant
+    Operations, Supply Chain, Quality.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - cements
+  - manufacturing
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-cements-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-cements-team
+  system: bdl-cements

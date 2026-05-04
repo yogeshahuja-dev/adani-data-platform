@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-prod-plant-availability
+  title: Plant Availability (AGEL - Prod)
+  description: 'Plant availability - uptime, scheduled/unscheduled outages.
+
+    Consumers: O and M Teams, COO
+
+    Business: Adani Green Energy (AGEL) | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - agel
+  - green-energy
+  - operations
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 7 AM IST
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-prod-workspace

@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-dev-safety-genie
+  title: Safety Genie (NR - Dev)
+  description: 'AI agent for Safety - incident tracking, near-miss, compliance.
+
+    Business: Natural Resources (NR) | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - nr
+  - natural-resources
+  - safety
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: safety
+  links:
+  - url: https://adb-bdl-nr-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-dev-workspace

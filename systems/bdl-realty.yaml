@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-realty
+  title: BDL - Realty
+  description: |
+    Business Data Lake for Adani Realty.
+    Domains: Sales Pipeline, Construction Progress, Leasing, Tenant Management.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - realty
+    - real-estate
+    - construction
+    - leasing
+  links:
+    - url: https://adb-bdl-realty-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-realty-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-realty-team

@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-dev-generation-dashboard
+  title: Generation Dashboard (AGEL - Dev)
+  description: 'Generation overview - solar + wind, PLF, forecast accuracy.
+
+    Audience: CEO, Grid Ops, COO
+
+    Business: Adani Green Energy (AGEL) | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - agel
+  - green-energy
+  - reporting
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: CEO, Grid Ops, COO
+  links:
+  - url: https://adb-bdl-agel-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-dev-workspace

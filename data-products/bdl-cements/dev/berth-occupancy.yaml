@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-berth-occupancy
+  title: Berth Occupancy (Cements - Dev)
+  description: 'Berth occupancy rates — utilization, idle time, peak hours by berth.
+
+    Consumers: Planning, Port Ops
+
+    Business: Cements | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - cements
+  - manufacturing
+  - planning
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/data-product-domain: planning
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

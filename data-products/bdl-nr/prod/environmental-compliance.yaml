@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-prod-environmental-compliance
+  title: Environmental Compliance (NR - Prod)
+  description: 'Environmental monitoring - emissions, water, rehabilitation.
+
+    Consumers: Environment Team, Regulatory
+
+    Business: Natural Resources (NR) | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - nr
+  - natural-resources
+  - environment
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Weekly refresh
+  links:
+  - url: https://adb-bdl-nr-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-prod-workspace

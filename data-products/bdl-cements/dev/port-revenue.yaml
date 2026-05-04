@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-port-revenue
+  title: Port Revenue (Cements - Dev)
+  description: 'Port revenue analytics — by service type, customer, commodity, port.
+
+    Consumers: CFO, Commercial
+
+    Business: Cements | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - cements
+  - manufacturing
+  - finance
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/data-product-domain: finance
+    adani.com/sla: Daily refresh by 9 AM IST
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

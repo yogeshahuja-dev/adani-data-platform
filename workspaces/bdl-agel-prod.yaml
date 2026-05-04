@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-agel-prod-workspace
+  title: Adani Green Energy (AGEL) - Production Workspace
+  description: Production Databricks workspace for Adani Green Energy (AGEL). Adani
+    Green Energy - Generation, Plant Performance, Grid.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - agel
+  - green-energy
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-agel-team
+  system: bdl-agel

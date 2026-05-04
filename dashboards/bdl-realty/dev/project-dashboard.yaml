@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-dev-project-dashboard
+  title: Project Dashboard (Realty - Dev)
+  description: 'Construction projects - timelines, budgets, quality, safety.
+
+    Audience: Project Heads, COO
+
+    Business: Realty | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - realty
+  - real-estate
+  - reporting
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: Project Heads, COO
+  links:
+  - url: https://adb-bdl-realty-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-dev-workspace

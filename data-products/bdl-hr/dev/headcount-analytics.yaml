@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-hr-dev-headcount-analytics
+  title: Headcount Analytics (HR - Dev)
+  description: 'Headcount by BU, grade, location, gender with trends.
+
+    Consumers: CHRO, Business Heads
+
+    Business: Human Resources | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - hr
+  - workforce
+  - workforce
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 8 AM IST
+  links:
+  - url: https://adb-bdl-hr-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-hr-team
+  system: bdl-hr
+  dependsOn:
+  - resource:bdl-hr-dev-workspace

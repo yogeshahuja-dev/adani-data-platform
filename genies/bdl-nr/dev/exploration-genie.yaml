@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-dev-exploration-genie
+  title: Exploration Genie (NR - Dev)
+  description: 'AI agent for Exploration - geological data, drill results, reserves.
+
+    Business: Natural Resources (NR) | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - nr
+  - natural-resources
+  - exploration
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: exploration
+  links:
+  - url: https://adb-bdl-nr-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-dev-workspace

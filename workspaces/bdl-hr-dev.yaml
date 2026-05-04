@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-hr-dev-workspace
+  title: Human Resources - Development Workspace
+  description: Development Databricks workspace for Human Resources. Adani Group HR
+    - Workforce, Recruitment, Payroll.
+  tags:
+  - databricks
+  - workspace
+  - dev
+  - hr
+  - workforce
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: dev
+  links:
+  - url: https://adb-bdl-hr-dev.azuredatabricks.net
+    title: Open Development Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-hr-team
+  system: bdl-hr

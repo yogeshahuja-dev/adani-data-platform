@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-ailabs-dev-experiment-genie
+  title: Experiment Genie (AI Labs - Dev)
+  description: 'AI agent for Experiments - runs, metrics, hyperparameters.
+
+    Business: AI Labs | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - ailabs
+  - ml
+  - research
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: research
+  links:
+  - url: https://adb-bdl-ailabs-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-ailabs-team
+  system: bdl-ailabs
+  dependsOn:
+  - resource:bdl-ailabs-dev-workspace

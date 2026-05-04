@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-ailabs-dev-model-performance
+  title: Model Performance (AI Labs - Dev)
+  description: 'Production model performance - accuracy, latency, errors.
+
+    Consumers: ML Engineers, SRE
+
+    Business: AI Labs | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - ailabs
+  - ml
+  - mlops
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-ailabs-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-ailabs-team
+  system: bdl-ailabs
+  dependsOn:
+  - resource:bdl-ailabs-dev-workspace

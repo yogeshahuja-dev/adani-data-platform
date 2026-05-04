@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-kiln-efficiency
+  title: Kiln Efficiency (Cements - Dev)
+  description: 'Kiln performance - heat rate, throughput, fuel, uptime.
+
+    Consumers: Plant Heads, COO
+
+    Business: Cements | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - cements
+  - manufacturing
+  - operations
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Hourly refresh
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

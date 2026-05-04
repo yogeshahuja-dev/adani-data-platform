@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-hr-prod-compensation-benchmark
+  title: Compensation Benchmark (HR - Prod)
+  description: 'Internal vs market compensation by role, grade, location.
+
+    Consumers: Comp and Ben Team, CHRO
+
+    Business: Human Resources | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - hr
+  - workforce
+  - compensation
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Monthly refresh
+  links:
+  - url: https://adb-bdl-hr-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-hr-team
+  system: bdl-hr
+  dependsOn:
+  - resource:bdl-hr-prod-workspace

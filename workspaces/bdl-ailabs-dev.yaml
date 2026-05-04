@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-ailabs-dev-workspace
+  title: AI Labs - Development Workspace
+  description: Development Databricks workspace for AI Labs. Adani AI Labs - ML Ops,
+    Model Registry, Research.
+  tags:
+  - databricks
+  - workspace
+  - dev
+  - ailabs
+  - ml
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: dev
+  links:
+  - url: https://adb-bdl-ailabs-dev.azuredatabricks.net
+    title: Open Development Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-ailabs-team
+  system: bdl-ailabs

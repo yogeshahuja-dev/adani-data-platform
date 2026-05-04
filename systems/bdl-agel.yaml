@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-agel
+  title: BDL - Adani Green Energy (AGEL)
+  description: |
+    Business Data Lake for Adani Green Energy Limited.
+    Domains: Power Generation, Plant Performance, Grid Analytics, Sustainability.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - agel
+    - green-energy
+    - solar
+    - wind
+    - sustainability
+  links:
+    - url: https://adb-bdl-agel-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-agel-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-agel-team

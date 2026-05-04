@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-dev-ppa-compliance
+  title: PPA Compliance (AGEL - Dev)
+  description: 'PPA compliance - committed vs delivered, penalties.
+
+    Consumers: Commercial, Legal
+
+    Business: Adani Green Energy (AGEL) | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - agel
+  - green-energy
+  - commercial
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 8 AM IST
+  links:
+  - url: https://adb-bdl-agel-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-dev-workspace

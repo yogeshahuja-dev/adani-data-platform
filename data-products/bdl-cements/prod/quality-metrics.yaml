@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-prod-quality-metrics
+  title: Quality Metrics (Cements - Prod)
+  description: 'Cement quality - compressive strength, fineness, setting time.
+
+    Consumers: QC Team, Plant Heads
+
+    Business: Cements | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - cements
+  - manufacturing
+  - quality
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Per-batch
+  links:
+  - url: https://adb-bdl-cements-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-prod-workspace

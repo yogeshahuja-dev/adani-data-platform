@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-agel-dev-workspace
+  title: Adani Green Energy (AGEL) - Development Workspace
+  description: Development Databricks workspace for Adani Green Energy (AGEL). Adani
+    Green Energy - Generation, Plant Performance, Grid.
+  tags:
+  - databricks
+  - workspace
+  - dev
+  - agel
+  - green-energy
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: dev
+  links:
+  - url: https://adb-bdl-agel-dev.azuredatabricks.net
+    title: Open Development Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-agel-team
+  system: bdl-agel

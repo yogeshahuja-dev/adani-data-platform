@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-dev-tenant-genie
+  title: Tenant Genie (Realty - Dev)
+  description: 'AI agent for Tenants - lease status, renewals, complaints.
+
+    Business: Realty | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - realty
+  - real-estate
+  - leasing
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: leasing
+  links:
+  - url: https://adb-bdl-realty-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-dev-workspace

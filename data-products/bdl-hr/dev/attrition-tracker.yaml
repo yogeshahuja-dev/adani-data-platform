@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-hr-dev-attrition-tracker
+  title: Attrition Tracker (HR - Dev)
+  description: 'Attrition rates, exit reasons, retention risk scores.
+
+    Consumers: HR Business Partners
+
+    Business: Human Resources | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - hr
+  - workforce
+  - workforce
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Weekly refresh
+  links:
+  - url: https://adb-bdl-hr-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-hr-team
+  system: bdl-hr
+  dependsOn:
+  - resource:bdl-hr-dev-workspace

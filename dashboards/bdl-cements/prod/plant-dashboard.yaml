@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-prod-plant-dashboard
+  title: Plant Dashboard (Cements - Prod)
+  description: 'Plant ops - production, kiln, energy, quality KPIs.
+
+    Audience: Plant Heads, COO
+
+    Business: Cements | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - cements
+  - manufacturing
+  - reporting
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: Plant Heads, COO
+  links:
+  - url: https://adb-bdl-cements-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-prod-workspace

@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-dev-sales-genie
+  title: Sales Genie (Realty - Dev)
+  description: 'AI agent for Sales - bookings, inventory, pricing, customers.
+
+    Business: Realty | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - realty
+  - real-estate
+  - sales
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: sales
+  links:
+  - url: https://adb-bdl-realty-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-dev-workspace

@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-prod-quality-genie
+  title: Quality Genie (Cements - Prod)
+  description: 'AI agent for Quality - cement grade, test results, compliance.
+
+    Business: Cements | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - cements
+  - manufacturing
+  - quality
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: quality
+  links:
+  - url: https://adb-bdl-cements-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-prod-workspace

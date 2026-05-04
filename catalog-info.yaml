@@ -1,0 +1,254 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: adani-data-platform
+  description: |
+    Adani Group Data Platform - 8 Business Data Lakes.
+    Each business has Dev + Prod Databricks workspaces.
+    Each workspace: 3 Genies, 5 Data Products, 2 Dashboards.
+    Total: 160 components across 16 workspaces.
+spec:
+  targets:
+    # Organization
+    - ./org/groups.yaml
+
+    # Systems (8)
+    - ./systems/edl-corp-group-it.yaml
+    - ./systems/bdl-nr.yaml
+    - ./systems/bdl-cements.yaml
+    - ./systems/bdl-hr.yaml
+    - ./systems/bdl-agel.yaml
+    - ./systems/bdl-port.yaml
+    - ./systems/bdl-realty.yaml
+    - ./systems/bdl-ailabs.yaml
+
+    # Workspaces (16)
+    - ./workspaces/edl-corp-group-it-dev.yaml
+    - ./workspaces/edl-corp-group-it-prod.yaml
+    - ./workspaces/bdl-nr-dev.yaml
+    - ./workspaces/bdl-nr-prod.yaml
+    - ./workspaces/bdl-cements-dev.yaml
+    - ./workspaces/bdl-cements-prod.yaml
+    - ./workspaces/bdl-hr-dev.yaml
+    - ./workspaces/bdl-hr-prod.yaml
+    - ./workspaces/bdl-agel-dev.yaml
+    - ./workspaces/bdl-agel-prod.yaml
+    - ./workspaces/bdl-port-dev.yaml
+    - ./workspaces/bdl-port-prod.yaml
+    - ./workspaces/bdl-realty-dev.yaml
+    - ./workspaces/bdl-realty-prod.yaml
+    - ./workspaces/bdl-ailabs-dev.yaml
+    - ./workspaces/bdl-ailabs-prod.yaml
+
+    # Genies: Corp Group IT
+    - ./genies/edl-corp-group-it/dev/finance-genie.yaml
+    - ./genies/edl-corp-group-it/dev/procurement-genie.yaml
+    - ./genies/edl-corp-group-it/dev/compliance-genie.yaml
+    - ./genies/edl-corp-group-it/prod/finance-genie.yaml
+    - ./genies/edl-corp-group-it/prod/procurement-genie.yaml
+    - ./genies/edl-corp-group-it/prod/compliance-genie.yaml
+
+    # Genies: NR
+    - ./genies/bdl-nr/dev/mining-ops-genie.yaml
+    - ./genies/bdl-nr/dev/exploration-genie.yaml
+    - ./genies/bdl-nr/dev/safety-genie.yaml
+    - ./genies/bdl-nr/prod/mining-ops-genie.yaml
+    - ./genies/bdl-nr/prod/exploration-genie.yaml
+    - ./genies/bdl-nr/prod/safety-genie.yaml
+
+    # Genies: Cements
+    - ./genies/bdl-cements/dev/plant-ops-genie.yaml
+    - ./genies/bdl-cements/dev/supply-chain-genie.yaml
+    - ./genies/bdl-cements/dev/quality-genie.yaml
+    - ./genies/bdl-cements/prod/plant-ops-genie.yaml
+    - ./genies/bdl-cements/prod/supply-chain-genie.yaml
+    - ./genies/bdl-cements/prod/quality-genie.yaml
+
+    # Genies: HR
+    - ./genies/bdl-hr/dev/workforce-genie.yaml
+    - ./genies/bdl-hr/dev/recruitment-genie.yaml
+    - ./genies/bdl-hr/dev/payroll-genie.yaml
+    - ./genies/bdl-hr/prod/workforce-genie.yaml
+    - ./genies/bdl-hr/prod/recruitment-genie.yaml
+    - ./genies/bdl-hr/prod/payroll-genie.yaml
+
+    # Genies: AGEL
+    - ./genies/bdl-agel/dev/generation-genie.yaml
+    - ./genies/bdl-agel/dev/plant-performance-genie.yaml
+    - ./genies/bdl-agel/dev/grid-analytics-genie.yaml
+    - ./genies/bdl-agel/prod/generation-genie.yaml
+    - ./genies/bdl-agel/prod/plant-performance-genie.yaml
+    - ./genies/bdl-agel/prod/grid-analytics-genie.yaml
+
+    # Genies: Port
+    - ./genies/bdl-port/dev/vessel-ops-genie.yaml
+    - ./genies/bdl-port/dev/cargo-genie.yaml
+    - ./genies/bdl-port/dev/berth-planning-genie.yaml
+    - ./genies/bdl-port/prod/vessel-ops-genie.yaml
+    - ./genies/bdl-port/prod/cargo-genie.yaml
+    - ./genies/bdl-port/prod/berth-planning-genie.yaml
+
+    # Genies: Realty
+    - ./genies/bdl-realty/dev/sales-genie.yaml
+    - ./genies/bdl-realty/dev/construction-genie.yaml
+    - ./genies/bdl-realty/dev/tenant-genie.yaml
+    - ./genies/bdl-realty/prod/sales-genie.yaml
+    - ./genies/bdl-realty/prod/construction-genie.yaml
+    - ./genies/bdl-realty/prod/tenant-genie.yaml
+
+    # Genies: AI Labs
+    - ./genies/bdl-ailabs/dev/ml-ops-genie.yaml
+    - ./genies/bdl-ailabs/dev/experiment-genie.yaml
+    - ./genies/bdl-ailabs/dev/model-registry-genie.yaml
+    - ./genies/bdl-ailabs/prod/ml-ops-genie.yaml
+    - ./genies/bdl-ailabs/prod/experiment-genie.yaml
+    - ./genies/bdl-ailabs/prod/model-registry-genie.yaml
+
+    # Data Products: Corp Group IT
+    - ./data-products/edl-corp-group-it/dev/vendor-360.yaml
+    - ./data-products/edl-corp-group-it/dev/spend-analytics.yaml
+    - ./data-products/edl-corp-group-it/dev/budget-variance.yaml
+    - ./data-products/edl-corp-group-it/dev/contract-compliance.yaml
+    - ./data-products/edl-corp-group-it/dev/audit-trail.yaml
+    - ./data-products/edl-corp-group-it/prod/vendor-360.yaml
+    - ./data-products/edl-corp-group-it/prod/spend-analytics.yaml
+    - ./data-products/edl-corp-group-it/prod/budget-variance.yaml
+    - ./data-products/edl-corp-group-it/prod/contract-compliance.yaml
+    - ./data-products/edl-corp-group-it/prod/audit-trail.yaml
+
+    # Data Products: NR
+    - ./data-products/bdl-nr/dev/production-output.yaml
+    - ./data-products/bdl-nr/dev/equipment-health.yaml
+    - ./data-products/bdl-nr/dev/reserve-estimation.yaml
+    - ./data-products/bdl-nr/dev/safety-metrics.yaml
+    - ./data-products/bdl-nr/dev/environmental-compliance.yaml
+    - ./data-products/bdl-nr/prod/production-output.yaml
+    - ./data-products/bdl-nr/prod/equipment-health.yaml
+    - ./data-products/bdl-nr/prod/reserve-estimation.yaml
+    - ./data-products/bdl-nr/prod/safety-metrics.yaml
+    - ./data-products/bdl-nr/prod/environmental-compliance.yaml
+
+    # Data Products: Cements
+    - ./data-products/bdl-cements/dev/kiln-efficiency.yaml
+    - ./data-products/bdl-cements/dev/raw-material-inventory.yaml
+    - ./data-products/bdl-cements/dev/dispatch-tracking.yaml
+    - ./data-products/bdl-cements/dev/energy-consumption.yaml
+    - ./data-products/bdl-cements/dev/quality-metrics.yaml
+    - ./data-products/bdl-cements/prod/kiln-efficiency.yaml
+    - ./data-products/bdl-cements/prod/raw-material-inventory.yaml
+    - ./data-products/bdl-cements/prod/dispatch-tracking.yaml
+    - ./data-products/bdl-cements/prod/energy-consumption.yaml
+    - ./data-products/bdl-cements/prod/quality-metrics.yaml
+
+    # Data Products: HR
+    - ./data-products/bdl-hr/dev/headcount-analytics.yaml
+    - ./data-products/bdl-hr/dev/attrition-tracker.yaml
+    - ./data-products/bdl-hr/dev/compensation-benchmark.yaml
+    - ./data-products/bdl-hr/dev/learning-completion.yaml
+    - ./data-products/bdl-hr/dev/diversity-metrics.yaml
+    - ./data-products/bdl-hr/prod/headcount-analytics.yaml
+    - ./data-products/bdl-hr/prod/attrition-tracker.yaml
+    - ./data-products/bdl-hr/prod/compensation-benchmark.yaml
+    - ./data-products/bdl-hr/prod/learning-completion.yaml
+    - ./data-products/bdl-hr/prod/diversity-metrics.yaml
+
+    # Data Products: AGEL
+    - ./data-products/bdl-agel/dev/generation-forecast.yaml
+    - ./data-products/bdl-agel/dev/plant-availability.yaml
+    - ./data-products/bdl-agel/dev/ppa-compliance.yaml
+    - ./data-products/bdl-agel/dev/carbon-credits.yaml
+    - ./data-products/bdl-agel/dev/grid-injection.yaml
+    - ./data-products/bdl-agel/prod/generation-forecast.yaml
+    - ./data-products/bdl-agel/prod/plant-availability.yaml
+    - ./data-products/bdl-agel/prod/ppa-compliance.yaml
+    - ./data-products/bdl-agel/prod/carbon-credits.yaml
+    - ./data-products/bdl-agel/prod/grid-injection.yaml
+
+    # Data Products: Port
+    - ./data-products/bdl-port/dev/vessel-turnaround.yaml
+    - ./data-products/bdl-port/dev/cargo-throughput.yaml
+    - ./data-products/bdl-port/dev/berth-occupancy.yaml
+    - ./data-products/bdl-port/dev/container-dwell.yaml
+    - ./data-products/bdl-port/dev/port-revenue.yaml
+    - ./data-products/bdl-port/prod/vessel-turnaround.yaml
+    - ./data-products/bdl-port/prod/cargo-throughput.yaml
+    - ./data-products/bdl-port/prod/berth-occupancy.yaml
+    - ./data-products/bdl-port/prod/container-dwell.yaml
+    - ./data-products/bdl-port/prod/port-revenue.yaml
+
+    # Data Products: Realty
+    - ./data-products/bdl-realty/dev/sales-pipeline.yaml
+    - ./data-products/bdl-realty/dev/construction-progress.yaml
+    - ./data-products/bdl-realty/dev/occupancy-rate.yaml
+    - ./data-products/bdl-realty/dev/rental-yield.yaml
+    - ./data-products/bdl-realty/dev/customer-satisfaction.yaml
+    - ./data-products/bdl-realty/prod/sales-pipeline.yaml
+    - ./data-products/bdl-realty/prod/construction-progress.yaml
+    - ./data-products/bdl-realty/prod/occupancy-rate.yaml
+    - ./data-products/bdl-realty/prod/rental-yield.yaml
+    - ./data-products/bdl-realty/prod/customer-satisfaction.yaml
+
+    # Data Products: AI Labs
+    - ./data-products/bdl-ailabs/dev/model-performance.yaml
+    - ./data-products/bdl-ailabs/dev/experiment-tracker.yaml
+    - ./data-products/bdl-ailabs/dev/feature-store.yaml
+    - ./data-products/bdl-ailabs/dev/inference-metrics.yaml
+    - ./data-products/bdl-ailabs/dev/data-drift.yaml
+    - ./data-products/bdl-ailabs/prod/model-performance.yaml
+    - ./data-products/bdl-ailabs/prod/experiment-tracker.yaml
+    - ./data-products/bdl-ailabs/prod/feature-store.yaml
+    - ./data-products/bdl-ailabs/prod/inference-metrics.yaml
+    - ./data-products/bdl-ailabs/prod/data-drift.yaml
+
+    # Dashboards: Corp Group IT
+    - ./dashboards/edl-corp-group-it/dev/executive-overview.yaml
+    - ./dashboards/edl-corp-group-it/dev/procurement-cockpit.yaml
+    - ./dashboards/edl-corp-group-it/prod/executive-overview.yaml
+    - ./dashboards/edl-corp-group-it/prod/procurement-cockpit.yaml
+
+    # Dashboards: NR
+    - ./dashboards/bdl-nr/dev/mining-ops-dashboard.yaml
+    - ./dashboards/bdl-nr/dev/safety-dashboard.yaml
+    - ./dashboards/bdl-nr/prod/mining-ops-dashboard.yaml
+    - ./dashboards/bdl-nr/prod/safety-dashboard.yaml
+
+    # Dashboards: Cements
+    - ./dashboards/bdl-cements/dev/plant-dashboard.yaml
+    - ./dashboards/bdl-cements/dev/logistics-dashboard.yaml
+    - ./dashboards/bdl-cements/prod/plant-dashboard.yaml
+    - ./dashboards/bdl-cements/prod/logistics-dashboard.yaml
+
+    # Dashboards: HR
+    - ./dashboards/bdl-hr/dev/people-dashboard.yaml
+    - ./dashboards/bdl-hr/dev/talent-dashboard.yaml
+    - ./dashboards/bdl-hr/prod/people-dashboard.yaml
+    - ./dashboards/bdl-hr/prod/talent-dashboard.yaml
+
+    # Dashboards: AGEL
+    - ./dashboards/bdl-agel/dev/generation-dashboard.yaml
+    - ./dashboards/bdl-agel/dev/sustainability-dashboard.yaml
+    - ./dashboards/bdl-agel/prod/generation-dashboard.yaml
+    - ./dashboards/bdl-agel/prod/sustainability-dashboard.yaml
+
+    # Dashboards: Port
+    - ./dashboards/bdl-port/dev/port-ops-dashboard.yaml
+    - ./dashboards/bdl-port/dev/cargo-dashboard.yaml
+    - ./dashboards/bdl-port/prod/port-ops-dashboard.yaml
+    - ./dashboards/bdl-port/prod/cargo-dashboard.yaml
+
+    # Dashboards: Realty
+    - ./dashboards/bdl-realty/dev/project-dashboard.yaml
+    - ./dashboards/bdl-realty/dev/leasing-dashboard.yaml
+    - ./dashboards/bdl-realty/prod/project-dashboard.yaml
+    - ./dashboards/bdl-realty/prod/leasing-dashboard.yaml
+
+    # Dashboards: AI Labs
+    - ./dashboards/bdl-ailabs/dev/mlops-dashboard.yaml
+    - ./dashboards/bdl-ailabs/dev/research-dashboard.yaml
+    - ./dashboards/bdl-ailabs/prod/mlops-dashboard.yaml
+    - ./dashboards/bdl-ailabs/prod/research-dashboard.yaml
+
+    # Templates
+    - ./templates/register-genie/template.yaml
+    - ./templates/register-data-product/template.yaml
+    - ./templates/register-dashboard/template.yaml

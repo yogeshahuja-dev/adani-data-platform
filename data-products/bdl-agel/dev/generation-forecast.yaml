@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-dev-generation-forecast
+  title: Generation Forecast (AGEL - Dev)
+  description: '7-day generation forecast using weather and plant capacity.
+
+    Consumers: Grid Ops, Trading, PPA
+
+    Business: Adani Green Energy (AGEL) | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - agel
+  - green-energy
+  - generation
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Every 6 hours
+  links:
+  - url: https://adb-bdl-agel-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-dev-workspace

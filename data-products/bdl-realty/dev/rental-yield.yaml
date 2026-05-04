@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-realty-dev-rental-yield
+  title: Rental Yield (Realty - Dev)
+  description: 'Rental yield by property, location, tenant grade, lease term.
+
+    Consumers: CFO, Investors
+
+    Business: Realty | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - realty
+  - real-estate
+  - finance
+  annotations:
+    adani.com/business: bdl-realty
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Monthly refresh
+  links:
+  - url: https://adb-bdl-realty-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-realty-team
+  system: bdl-realty
+  dependsOn:
+  - resource:bdl-realty-dev-workspace

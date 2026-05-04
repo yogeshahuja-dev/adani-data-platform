@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-port-prod-berth-planning-genie
+  title: Berth Planning Genie (Port - Prod)
+  description: 'AI agent for Berth Planning - availability, optimization.
+
+    Business: Ports and SEZ | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - port
+  - logistics
+  - berth
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: berth
+  links:
+  - url: https://adb-bdl-port-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-port-team
+  system: bdl-port
+  dependsOn:
+  - resource:bdl-port-prod-workspace

@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-hr-prod-people-dashboard
+  title: People Dashboard (HR - Prod)
+  description: 'Workforce overview - headcount, attrition, hiring, diversity.
+
+    Audience: CHRO, HR Business Partners
+
+    Business: Human Resources | Environment: Production'
+  tags:
+  - dashboard
+  - prod
+  - hr
+  - workforce
+  - reporting
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: prod
+    adani.com/component-type: dashboard
+    adani.com/audience: CHRO, HR Business Partners
+  links:
+  - url: https://adb-bdl-hr-prod.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Production Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: production
+  owner: bdl-hr-team
+  system: bdl-hr
+  dependsOn:
+  - resource:bdl-hr-prod-workspace

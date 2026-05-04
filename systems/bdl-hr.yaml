@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-hr
+  title: BDL - Human Resources
+  description: |
+    Business Data Lake for Adani Group HR.
+    Domains: Workforce Management, Recruitment, Payroll, L&D, Diversity.
+    Workspaces: Dev + Prod on Azure Databricks.
+  tags:
+    - bdl
+    - hr
+    - workforce
+    - recruitment
+    - payroll
+  links:
+    - url: https://adb-bdl-hr-dev.azuredatabricks.net
+      title: Dev Workspace
+      icon: dashboard
+    - url: https://adb-bdl-hr-prod.azuredatabricks.net
+      title: Prod Workspace
+      icon: dashboard
+spec:
+  owner: bdl-hr-team

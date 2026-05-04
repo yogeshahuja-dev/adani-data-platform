@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-nr-dev-reserve-estimation
+  title: Reserve Estimation (NR - Dev)
+  description: 'Mineral reserves - proven, probable, possible by mine.
+
+    Consumers: Geology, Strategy, Investors
+
+    Business: Natural Resources (NR) | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - nr
+  - natural-resources
+  - exploration
+  annotations:
+    adani.com/business: bdl-nr
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Monthly refresh
+  links:
+  - url: https://adb-bdl-nr-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-nr-team
+  system: bdl-nr
+  dependsOn:
+  - resource:bdl-nr-dev-workspace

@@ -1,0 +1,89 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: register-dashboard
+  title: Register New Dashboard
+  description: Register a new Databricks SQL Dashboard in the catalog. Select the business system and workspace environment.
+  tags:
+    - dashboard
+    - register
+spec:
+  owner: edl-platform-team
+  type: dashboard
+  parameters:
+    - title: Dashboard Details
+      required:
+        - dashboardName
+        - dashboardTitle
+        - description
+        - businessSystem
+        - environment
+      properties:
+        dashboardName:
+          title: Dashboard Identifier
+          type: string
+          description: Lowercase with hyphens only (e.g. executive-overview, port-ops-dashboard)
+          pattern: '^[a-z0-9-]+$'
+        dashboardTitle:
+          title: Dashboard Display Name
+          type: string
+          description: Human-readable name (e.g. Executive Overview, Port Operations)
+        description:
+          title: Description
+          type: string
+          ui:widget: textarea
+          description: What KPIs/metrics does this dashboard show? Who is the audience?
+        businessSystem:
+          title: Business System
+          type: string
+          enum:
+            - edl-corp-group-it
+            - bdl-nr
+            - bdl-cements
+            - bdl-hr
+            - bdl-agel
+            - bdl-port
+            - bdl-realty
+            - bdl-ailabs
+          enumNames:
+            - EDL - Corp Group IT
+            - BDL - Natural Resources (NR)
+            - BDL - Cements
+            - BDL - Human Resources
+            - BDL - Adani Green Energy (AGEL)
+            - BDL - Ports and SEZ
+            - BDL - Realty
+            - BDL - AI Labs
+        environment:
+          title: Environment
+          type: string
+          enum:
+            - dev
+            - prod
+          enumNames:
+            - Development
+            - Production
+        audience:
+          title: Target Audience
+          type: string
+          description: e.g. CXO, Operations team, Plant managers
+          default: Business stakeholders
+  steps:
+    - id: log
+      name: Log Registration
+      action: debug:log
+      input:
+        message: |
+          NEW DASHBOARD REGISTERED!
+          Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
+          Title: ${{ parameters.dashboardTitle }}
+          System: ${{ parameters.businessSystem }}
+          Environment: ${{ parameters.environment }}
+          Audience: ${{ parameters.audience }}
+          Description: ${{ parameters.description }}
+        listWorkspace: true
+  output:
+    links:
+      - title: View All Dashboards
+        icon: catalog
+        url: /catalog?filters[kind]=component&filters[type]=dashboard

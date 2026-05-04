@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-hr-dev-talent-dashboard
+  title: Talent Dashboard (HR - Dev)
+  description: 'Talent management - recruitment, learning, succession.
+
+    Audience: L and D, Recruitment Heads
+
+    Business: Human Resources | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - hr
+  - workforce
+  - reporting
+  annotations:
+    adani.com/business: bdl-hr
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: L and D, Recruitment Heads
+  links:
+  - url: https://adb-bdl-hr-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-hr-team
+  system: bdl-hr
+  dependsOn:
+  - resource:bdl-hr-dev-workspace

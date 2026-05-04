@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-energy-consumption
+  title: Energy Consumption (Cements - Dev)
+  description: 'Energy analytics - power, fuel, per-ton metrics by plant.
+
+    Consumers: Plant Heads, Sustainability
+
+    Business: Cements | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - cements
+  - manufacturing
+  - operations
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 7 AM IST
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

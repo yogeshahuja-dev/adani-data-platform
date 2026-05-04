@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-ailabs-prod-workspace
+  title: AI Labs - Production Workspace
+  description: Production Databricks workspace for AI Labs. Adani AI Labs - ML Ops,
+    Model Registry, Research.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - ailabs
+  - ml
+  annotations:
+    adani.com/business: bdl-ailabs
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-ailabs-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-ailabs-team
+  system: bdl-ailabs

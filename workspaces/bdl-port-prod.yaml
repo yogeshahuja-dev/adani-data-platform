@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-port-prod-workspace
+  title: Ports and SEZ - Production Workspace
+  description: Production Databricks workspace for Ports and SEZ. Adani Ports - Vessel
+    Operations, Cargo, Berth Planning.
+  tags:
+  - databricks
+  - workspace
+  - prod
+  - port
+  - logistics
+  annotations:
+    adani.com/business: bdl-port
+    adani.com/environment: prod
+  links:
+  - url: https://adb-bdl-port-prod.azuredatabricks.net
+    title: Open Production Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-port-team
+  system: bdl-port

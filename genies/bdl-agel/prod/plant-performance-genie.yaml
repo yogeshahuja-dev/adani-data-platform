@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-agel-prod-plant-performance-genie
+  title: Plant Performance Genie (AGEL - Prod)
+  description: 'AI agent for Plant Performance - availability, degradation, maintenance.
+
+    Business: Adani Green Energy (AGEL) | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - agel
+  - green-energy
+  - performance
+  annotations:
+    adani.com/business: bdl-agel
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: performance
+  links:
+  - url: https://adb-bdl-agel-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-agel-team
+  system: bdl-agel
+  dependsOn:
+  - resource:bdl-agel-prod-workspace

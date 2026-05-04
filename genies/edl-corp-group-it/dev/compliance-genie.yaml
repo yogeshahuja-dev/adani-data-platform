@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: edl-corp-group-it-dev-compliance-genie
+  title: Compliance Genie (Corp IT - Dev)
+  description: 'AI agent for Compliance - audit findings, policy violations.
+
+    Business: Corp Group IT | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - corp-group-it
+  - finance
+  - compliance
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: compliance
+  links:
+  - url: https://adb-corp-groupit-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it
+  dependsOn:
+  - resource:edl-corp-group-it-dev-workspace

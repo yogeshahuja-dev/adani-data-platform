@@ -1,0 +1,33 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-cements-dev-cargo-throughput
+  title: Cargo Throughput (Cements - Dev)
+  description: 'Cargo throughput metrics — MMTPA by port, commodity, month, YoY comparison.
+
+    Consumers: Commercial, CEO
+
+    Business: Cements | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - cements
+  - manufacturing
+  - operations
+  annotations:
+    adani.com/business: bdl-cements
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/data-product-domain: operations
+    adani.com/sla: Daily refresh by 8 AM IST
+  links:
+  - url: https://adb-bdl-cements-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-cements-team
+  system: bdl-cements
+  dependsOn:
+  - resource:bdl-cements-dev-workspace

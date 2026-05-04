@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: edl-corp-group-it-dev-spend-analytics
+  title: Spend Analytics (Corp IT - Dev)
+  description: 'Cross-business spend analysis by category, vendor, BU.
+
+    Consumers: CFO, Procurement leadership
+
+    Business: Corp Group IT | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - corp-group-it
+  - finance
+  - finance
+  annotations:
+    adani.com/business: edl-corp-group-it
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 9 AM IST
+  links:
+  - url: https://adb-corp-groupit-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: edl-corp-group-it-team
+  system: edl-corp-group-it
+  dependsOn:
+  - resource:edl-corp-group-it-dev-workspace
