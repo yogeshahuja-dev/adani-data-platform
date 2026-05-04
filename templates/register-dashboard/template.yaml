@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: register-dashboard
   title: Register New Dashboard
-  description: Register a new Databricks SQL Dashboard. Creates a GitHub repo and auto-registers in Backstage.
+  description: Register a new Databricks SQL Dashboard in the catalog. Select the business system and workspace environment.
   tags:
     - dashboard
     - register
@@ -32,7 +32,7 @@ spec:
           title: Description
           type: string
           ui:widget: textarea
-          description: What KPIs/metrics does this dashboard show?
+          description: What KPIs/metrics does this dashboard show? Who is the audience?
         businessSystem:
           title: Business System
           type: string
@@ -66,41 +66,4 @@ spec:
         audience:
           title: Target Audience
           type: string
-          description: e.g. CXO, Operations team, Plant managers
-          default: Business stakeholders
-  steps:
-    - id: fetch
-      name: Fetch Skeleton
-      action: fetch:template
-      input:
-        url: ./skeleton
-        values:
-          name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
-          title: ${{ parameters.dashboardTitle }}
-          description: ${{ parameters.description }}
-          system: ${{ parameters.businessSystem }}
-          environment: ${{ parameters.environment }}
-          owner: ${{ parameters.businessSystem }}-team
-          lifecycle: ${{ parameters.environment }}
-          audience: ${{ parameters.audience }}
-    - id: publish
-      name: Publish to GitHub
-      action: publish:github
-      input:
-        repoUrl: github.com?owner=yogeshahuja-dev&repo=${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
-        description: "Dashboard: ${{ parameters.dashboardTitle }} (${{ parameters.businessSystem }} - ${{ parameters.environment }})"
-        defaultBranch: main
-        repoVisibility: public
-    - id: register
-      name: Register in Backstage
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: /catalog-info.yaml
-  output:
-    links:
-      - title: View Repository
-        url: ${{ steps['publish'].output.remoteUrl }}
-      - title: View in Catalog
-        icon: catalog
-        entityRef: ${{ steps['register'].output.entityRef }}
+          description
