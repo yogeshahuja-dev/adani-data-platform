@@ -87,7 +87,6 @@ spec:
       name: Publish to GitHub
       action: publish:github
       input:
-        allowedHosts: ['github.com']
         repoUrl: github.com?owner=yogeshahuja-dev&repo=${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
         description: "Dashboard: ${{ parameters.dashboardTitle }} (${{ parameters.businessSystem }} - ${{ parameters.environment }})"
         defaultBranch: main
