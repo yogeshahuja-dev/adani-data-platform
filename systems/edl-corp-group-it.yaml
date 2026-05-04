@@ -7,6 +7,8 @@ metadata:
     Enterprise Data Lake for Corporate Group IT.
     Domains: Finance, Procurement, Compliance, Audit.
     Workspaces: Dev + Prod on Azure Databricks.
+  annotations:
+    backstage.io/techdocs-ref: url:https://github.com/yogeshahuja-dev/adani-data-platform
   tags:
     - edl
     - corp-group-it
@@ -14,10 +16,10 @@ metadata:
     - procurement
     - compliance
   links:
-    - url: https://adb-2478587080594690.10.azuredatabricks.net/
+    - url: https://adb-corp-groupit-dev.azuredatabricks.net
       title: Dev Workspace
       icon: dashboard
-    - url: https://adb-3201531543632009.9.azuredatabricks.net/
+    - url: https://adb-corp-groupit-prod.azuredatabricks.net
       title: Prod Workspace
       icon: dashboard
 spec:
