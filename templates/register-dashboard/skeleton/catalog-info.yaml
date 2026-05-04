@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name }}
+  title: "${{ values.title }} (${{ values.environment | capitalize }})"
+  description: |
+    ${{ values.description }}
+    Audience: ${{ values.audience }}
+    Business: ${{ values.system }} | Environment: ${{ values.environment }}
+  tags:
+    - dashboard
+    - ${{ values.environment }}
+    - reporting
+  annotations:
+    adani.com/business: ${{ values.system }}
+    adani.com/environment: ${{ values.environment }}
+    adani.com/component-type: dashboard
+    adani.com/audience: ${{ values.audience }}
+spec:
+  type: dashboard
+  lifecycle: ${{ values.lifecycle }}
+  owner: ${{ values.owner }}
+  system: ${{ values.system }}
+  dependsOn:
+    - resource:${{ values.system }}-${{ values.environment }}-workspace
