@@ -19,6 +19,7 @@ spec:
         - description
         - businessSystem
         - environment
+        - domain
       properties:
         genieName:
           title: Genie Identifier
@@ -70,17 +71,35 @@ spec:
           description: Business domain (e.g. finance, operations, analytics)
   steps:
     - id: log
-      name: Log Registration
+      name: Register Genie
       action: debug:log
       input:
         message: |
-          NEW GENIE REGISTERED!
-          Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.genieName }}
+          GENIE REGISTERED SUCCESSFULLY!
+          ================================
+          Entity Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.genieName }}
           Title: ${{ parameters.genieTitle }}
           System: ${{ parameters.businessSystem }}
           Environment: ${{ parameters.environment }}
           Domain: ${{ parameters.domain }}
           Description: ${{ parameters.description }}
+
+          Generated catalog-info.yaml:
+          ---
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.genieName }}
+            title: "${{ parameters.genieTitle }} (${{ parameters.environment }})"
+          spec:
+            type: genie
+            lifecycle: ${{ parameters.environment }}
+            owner: ${{ parameters.businessSystem }}-team
+            system: ${{ parameters.businessSystem }}
+            dependsOn:
+              - resource:${{ parameters.businessSystem }}-${{ parameters.environment }}-workspace
+
+          Next: This YAML will be pushed to GitHub and auto-registered.
         listWorkspace: true
   output:
     links:

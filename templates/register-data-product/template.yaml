@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: register-data-product
   title: Register New Data Product
-  description: Register a new Data Product in the catalog. Select the business system, workspace, and data product details.
+  description: Register a new Data Product in the catalog. Select the business system, workspace, and details.
   tags:
     - data-product
     - register
@@ -18,6 +18,7 @@ spec:
         - description
         - businessSystem
         - environment
+        - domain
       properties:
         dpName:
           title: Data Product Identifier
@@ -75,15 +76,17 @@ spec:
         consumers:
           title: Consumers
           type: string
-          description: Who uses this data product? (e.g. Finance team, Trading desk)
+          description: Who uses this data product?
+          default: Business stakeholders
   steps:
     - id: log
-      name: Log Registration
+      name: Register Data Product
       action: debug:log
       input:
         message: |
-          NEW DATA PRODUCT REGISTERED!
-          Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dpName }}
+          DATA PRODUCT REGISTERED SUCCESSFULLY!
+          ========================================
+          Entity Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dpName }}
           Title: ${{ parameters.dpTitle }}
           System: ${{ parameters.businessSystem }}
           Environment: ${{ parameters.environment }}
@@ -91,6 +94,23 @@ spec:
           SLA: ${{ parameters.sla }}
           Consumers: ${{ parameters.consumers }}
           Description: ${{ parameters.description }}
+
+          Generated catalog-info.yaml:
+          ---
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dpName }}
+            title: "${{ parameters.dpTitle }} (${{ parameters.environment }})"
+          spec:
+            type: data-product
+            lifecycle: ${{ parameters.environment }}
+            owner: ${{ parameters.businessSystem }}-team
+            system: ${{ parameters.businessSystem }}
+            dependsOn:
+              - resource:${{ parameters.businessSystem }}-${{ parameters.environment }}-workspace
+
+          Next: This YAML will be pushed to GitHub and auto-registered.
         listWorkspace: true
   output:
     links:
