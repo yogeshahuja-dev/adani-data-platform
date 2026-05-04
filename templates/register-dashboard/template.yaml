@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: register-dashboard
   title: Register New Dashboard
-  description: Register a new Databricks SQL Dashboard in the catalog. Select the business system and workspace environment.
+  description: Register a new Databricks SQL Dashboard. Creates a GitHub repo and auto-registers in Backstage.
   tags:
     - dashboard
     - register
@@ -32,7 +32,7 @@ spec:
           title: Description
           type: string
           ui:widget: textarea
-          description: What KPIs/metrics does this dashboard show? Who is the audience?
+          description: What KPIs/metrics does this dashboard show?
         businessSystem:
           title: Business System
           type: string
@@ -69,39 +69,38 @@ spec:
           description: e.g. CXO, Operations team, Plant managers
           default: Business stakeholders
   steps:
-    - id: log
-      name: Register Dashboard
-      action: debug:log
+    - id: fetch
+      name: Fetch Skeleton
+      action: fetch:template
       input:
-        message: |
-          DASHBOARD REGISTERED SUCCESSFULLY!
-          =====================================
-          Entity Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
-          Title: ${{ parameters.dashboardTitle }}
-          System: ${{ parameters.businessSystem }}
-          Environment: ${{ parameters.environment }}
-          Audience: ${{ parameters.audience }}
-          Description: ${{ parameters.description }}
-
-          Generated catalog-info.yaml:
-          ---
-          apiVersion: backstage.io/v1alpha1
-          kind: Component
-          metadata:
-            name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
-            title: "${{ parameters.dashboardTitle }} (${{ parameters.environment }})"
-          spec:
-            type: dashboard
-            lifecycle: ${{ parameters.environment }}
-            owner: ${{ parameters.businessSystem }}-team
-            system: ${{ parameters.businessSystem }}
-            dependsOn:
-              - resource:${{ parameters.businessSystem }}-${{ parameters.environment }}-workspace
-
-          Next: This YAML will be pushed to GitHub and auto-registered.
-        listWorkspace: true
+        url: ./skeleton
+        values:
+          name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
+          title: ${{ parameters.dashboardTitle }}
+          description: ${{ parameters.description }}
+          system: ${{ parameters.businessSystem }}
+          environment: ${{ parameters.environment }}
+          owner: ${{ parameters.businessSystem }}-team
+          lifecycle: ${{ parameters.environment }}
+          audience: ${{ parameters.audience }}
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        repoUrl: github.com?owner=yogeshahuja-dev&repo=${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
+        description: "Dashboard: ${{ parameters.dashboardTitle }} (${{ parameters.businessSystem }} - ${{ parameters.environment }})"
+        defaultBranch: main
+        repoVisibility: public
+    - id: register
+      name: Register in Backstage
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: /catalog-info.yaml
   output:
     links:
-      - title: View All Dashboards
+      - title: View Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: View in Catalog
         icon: catalog
-        url: /catalog?filters[kind]=component&filters[type]=dashboard
+        entityRef: ${{ steps['register'].output.entityRef }}
