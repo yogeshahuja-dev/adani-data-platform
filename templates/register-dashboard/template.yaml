@@ -66,4 +66,42 @@ spec:
         audience:
           title: Target Audience
           type: string
-          description
+          description: e.g. CXO, Operations team, Plant managers
+          default: Business stakeholders
+  steps:
+    - id: log
+      name: Register Dashboard
+      action: debug:log
+      input:
+        message: |
+          DASHBOARD REGISTERED SUCCESSFULLY!
+          =====================================
+          Entity Name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
+          Title: ${{ parameters.dashboardTitle }}
+          System: ${{ parameters.businessSystem }}
+          Environment: ${{ parameters.environment }}
+          Audience: ${{ parameters.audience }}
+          Description: ${{ parameters.description }}
+
+          Generated catalog-info.yaml:
+          ---
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
+            title: "${{ parameters.dashboardTitle }} (${{ parameters.environment }})"
+          spec:
+            type: dashboard
+            lifecycle: ${{ parameters.environment }}
+            owner: ${{ parameters.businessSystem }}-team
+            system: ${{ parameters.businessSystem }}
+            dependsOn:
+              - resource:${{ parameters.businessSystem }}-${{ parameters.environment }}-workspace
+
+          Next: This YAML will be pushed to GitHub and auto-registered.
+        listWorkspace: true
+  output:
+    links:
+      - title: View All Dashboards
+        icon: catalog
+        url: /catalog?filters[kind]=component&filters[type]=dashboard
