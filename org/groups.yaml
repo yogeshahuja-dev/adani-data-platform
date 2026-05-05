@@ -113,23 +113,3 @@ spec:
   memberOf: [edl-platform-team]
 
 ---
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: yogeshahuja-dev
-spec:
-  profile:
-    displayName: Yogesh Ahuja
-    email: yogesh.ahuja@adani.com
-  memberOf: [edl-corp-group-it-team]
-
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: mihirs910
-spec:
-  profile:
-    displayName: Mihir Sharma
-    email: mihir.sharma@adani.com
-  memberOf: [bdl-realty-team]
