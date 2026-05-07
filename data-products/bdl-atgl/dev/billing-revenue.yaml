@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-dev-billing-revenue
+  title: Billing Revenue (ATGL - Dev)
+  description: 'Billing and revenue analytics - collections, outstanding, segment-wise
+    revenue.
+
+    Consumers: CFO, Commercial
+
+    Business: Adani Total Gas | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - atgl
+  - gas
+  - finance
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 9 AM IST
+  links:
+  - url: https://adb-bdl-atgl-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-dev-workspace

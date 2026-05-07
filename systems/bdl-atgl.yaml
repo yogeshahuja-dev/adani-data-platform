@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: bdl-atgl
+  title: BDL - Adani Total Gas (ATGL)
+  description: 'Business Data Lake for Adani Total Gas.
+
+    Domains: Gas Distribution, Pipeline Operations, CNG Stations, PNG Connections.
+
+    Workspaces: Dev + Prod on Azure Databricks.'
+  tags:
+  - bdl
+  - atgl
+  - gas
+  - distribution
+  - pipeline
+  links:
+  - url: https://adb-bdl-atgl-dev.azuredatabricks.net
+    title: Dev Workspace
+    icon: dashboard
+  - url: https://adb-bdl-atgl-prod.azuredatabricks.net
+    title: Prod Workspace
+    icon: dashboard
+spec:
+  owner: bdl-atgl-team

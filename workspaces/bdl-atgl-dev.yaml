@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bdl-atgl-dev-workspace
+  title: Adani Total Gas (ATGL) - Development Workspace
+  description: Development Databricks workspace for Adani Total Gas.
+  tags:
+  - databricks
+  - workspace
+  - dev
+  - atgl
+  - gas
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: dev
+  links:
+  - url: https://adb-bdl-atgl-dev.azuredatabricks.net
+    title: Open Development Workspace
+    icon: dashboard
+spec:
+  type: databricks-workspace
+  owner: bdl-atgl-team
+  system: bdl-atgl

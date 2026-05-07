@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-prod-pipeline-genie
+  title: Pipeline Genie (ATGL - Prod)
+  description: 'AI agent for Pipeline Operations - flow rates, pressure, leak detection.
+
+    Business: Adani Total Gas | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - atgl
+  - gas
+  - pipeline
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: pipeline
+  links:
+  - url: https://adb-bdl-atgl-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-prod-workspace

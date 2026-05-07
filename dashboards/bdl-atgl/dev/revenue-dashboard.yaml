@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-dev-revenue-dashboard
+  title: Revenue Dashboard (ATGL - Dev)
+  description: 'Revenue analytics - billing, collections, segment performance.
+
+    Audience: CFO, Commercial
+
+    Business: Adani Total Gas | Environment: Development'
+  tags:
+  - dashboard
+  - dev
+  - atgl
+  - gas
+  - reporting
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: dev
+    adani.com/component-type: dashboard
+    adani.com/audience: CFO, Commercial
+  links:
+  - url: https://adb-bdl-atgl-dev.azuredatabricks.net/sql/dashboards
+    title: Open Dashboard in Development Workspace
+    icon: dashboard
+spec:
+  type: dashboard
+  lifecycle: development
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-dev-workspace

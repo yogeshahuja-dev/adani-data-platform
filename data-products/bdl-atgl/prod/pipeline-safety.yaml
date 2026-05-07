@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-prod-pipeline-safety
+  title: Pipeline Safety (ATGL - Prod)
+  description: 'Pipeline safety metrics - leak incidents, pressure anomalies, inspections.
+
+    Consumers: Safety Team, COO
+
+    Business: Adani Total Gas | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - atgl
+  - gas
+  - safety
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-atgl-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-prod-workspace

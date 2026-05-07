@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-dev-cng-genie
+  title: CNG Genie (ATGL - Dev)
+  description: 'AI agent for CNG Stations - dispensing volumes, station uptime, queues.
+
+    Business: Adani Total Gas | Environment: Development'
+  tags:
+  - genie
+  - ai-agent
+  - dev
+  - atgl
+  - gas
+  - cng
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: dev
+    adani.com/component-type: genie
+    adani.com/domain: cng
+  links:
+  - url: https://adb-bdl-atgl-dev.azuredatabricks.net/genie
+    title: Open Genie in Development Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: development
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-dev-workspace

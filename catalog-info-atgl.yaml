@@ -1,0 +1,52 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: adani-atgl-onboarding
+  description: |
+    Adani Total Gas (ATGL) - New business onboarding.
+    1 System, 2 Workspaces, 6 Genies, 10 Data Products, 4 Dashboards.
+    Team: bdl-atgl-team. User: Ganesh Kumar.
+spec:
+  targets:
+    # Team and User
+    - ./org/atgl-team.yaml
+    - ./org/ganesh.yaml
+
+    # System
+    - ./systems/bdl-atgl.yaml
+
+    # Workspaces
+    - ./workspaces/bdl-atgl-dev.yaml
+    - ./workspaces/bdl-atgl-prod.yaml
+
+    # Genies Dev
+    - ./genies/bdl-atgl/dev/pipeline-genie.yaml
+    - ./genies/bdl-atgl/dev/cng-genie.yaml
+    - ./genies/bdl-atgl/dev/png-genie.yaml
+
+    # Genies Prod
+    - ./genies/bdl-atgl/prod/pipeline-genie.yaml
+    - ./genies/bdl-atgl/prod/cng-genie.yaml
+    - ./genies/bdl-atgl/prod/png-genie.yaml
+
+    # Data Products Dev
+    - ./data-products/bdl-atgl/dev/gas-throughput.yaml
+    - ./data-products/bdl-atgl/dev/cng-station-metrics.yaml
+    - ./data-products/bdl-atgl/dev/png-connections.yaml
+    - ./data-products/bdl-atgl/dev/pipeline-safety.yaml
+    - ./data-products/bdl-atgl/dev/billing-revenue.yaml
+
+    # Data Products Prod
+    - ./data-products/bdl-atgl/prod/gas-throughput.yaml
+    - ./data-products/bdl-atgl/prod/cng-station-metrics.yaml
+    - ./data-products/bdl-atgl/prod/png-connections.yaml
+    - ./data-products/bdl-atgl/prod/pipeline-safety.yaml
+    - ./data-products/bdl-atgl/prod/billing-revenue.yaml
+
+    # Dashboards Dev
+    - ./dashboards/bdl-atgl/dev/gas-ops-dashboard.yaml
+    - ./dashboards/bdl-atgl/dev/revenue-dashboard.yaml
+
+    # Dashboards Prod
+    - ./dashboards/bdl-atgl/prod/gas-ops-dashboard.yaml
+    - ./dashboards/bdl-atgl/prod/revenue-dashboard.yaml

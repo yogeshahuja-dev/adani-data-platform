@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-dev-cng-station-metrics
+  title: CNG Station Metrics (ATGL - Dev)
+  description: 'CNG station performance - dispensing volume, uptime, queue time, revenue.
+
+    Consumers: Operations, Finance
+
+    Business: Adani Total Gas | Environment: Development'
+  tags:
+  - data-product
+  - dev
+  - atgl
+  - gas
+  - cng
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: dev
+    adani.com/component-type: data-product
+    adani.com/sla: Real-time
+  links:
+  - url: https://adb-bdl-atgl-dev.azuredatabricks.net/explore/data
+    title: View in Development Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: development
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-dev-workspace

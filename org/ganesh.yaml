@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ganesh-kumar
+  annotations: {}
+spec:
+  profile:
+    displayName: Ganesh Kumar
+    email: ganesh.kumar@adani.com
+  memberOf:
+  - bdl-atgl-team

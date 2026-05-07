@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-prod-png-genie
+  title: PNG Genie (ATGL - Prod)
+  description: 'AI agent for PNG Connections - new connections, billing, complaints.
+
+    Business: Adani Total Gas | Environment: Production'
+  tags:
+  - genie
+  - ai-agent
+  - prod
+  - atgl
+  - gas
+  - png
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: prod
+    adani.com/component-type: genie
+    adani.com/domain: png
+  links:
+  - url: https://adb-bdl-atgl-prod.azuredatabricks.net/genie
+    title: Open Genie in Production Workspace
+    icon: dashboard
+spec:
+  type: genie
+  lifecycle: production
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-prod-workspace

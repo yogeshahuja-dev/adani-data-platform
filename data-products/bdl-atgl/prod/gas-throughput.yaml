@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-prod-gas-throughput
+  title: Gas Throughput (ATGL - Prod)
+  description: 'Gas throughput analytics - volume by pipeline, city, customer segment.
+
+    Consumers: Operations, Commercial
+
+    Business: Adani Total Gas | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - atgl
+  - gas
+  - operations
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 7 AM IST
+  links:
+  - url: https://adb-bdl-atgl-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-prod-workspace

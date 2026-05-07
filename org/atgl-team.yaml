@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: bdl-atgl-team
+  description: Adani Total Gas (ATGL) - Gas Distribution, Pipeline, CNG, PNG
+spec:
+  type: team
+  parent: adani-group
+  children: []

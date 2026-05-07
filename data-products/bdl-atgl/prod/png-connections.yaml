@@ -1,0 +1,32 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdl-atgl-prod-png-connections
+  title: PNG Connections (ATGL - Prod)
+  description: 'PNG new connections - applications, installations, activations by
+    city.
+
+    Consumers: Sales, Operations
+
+    Business: Adani Total Gas | Environment: Production'
+  tags:
+  - data-product
+  - prod
+  - atgl
+  - gas
+  - png
+  annotations:
+    adani.com/business: bdl-atgl
+    adani.com/environment: prod
+    adani.com/component-type: data-product
+    adani.com/sla: Daily by 8 AM IST
+  links:
+  - url: https://adb-bdl-atgl-prod.azuredatabricks.net/explore/data
+    title: View in Production Workspace
+    icon: dashboard
+spec:
+  type: data-product
+  lifecycle: production
+  owner: bdl-atgl-team
+  dependsOn:
+  - resource:default/bdl-atgl-prod-workspace
