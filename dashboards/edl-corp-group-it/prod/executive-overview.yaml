@@ -27,6 +27,5 @@ spec:
   type: dashboard
   lifecycle: production
   owner: edl-corp-group-it-team
-  system: edl-corp-group-it
   dependsOn:
-  - resource:edl-corp-group-it-prod-workspace
+  - resource:default/edl-corp-group-it-prod-workspace

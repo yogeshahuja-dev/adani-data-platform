@@ -2,8 +2,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Group
 metadata:
-  name: edl-platform-team
-  description: Central EDL Platform Team - Manages shared infrastructure and governance across all Adani businesses
+  name: adani-group
+  description: Adani Group - Parent organization managing all business data lakes
 spec:
   type: organization
   children:
@@ -24,7 +24,7 @@ metadata:
   description: Corp Group IT - Finance, Procurement, Compliance, Audit
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -35,7 +35,7 @@ metadata:
   description: Adani Natural Resources (NR) - Mining Operations, Exploration, Production
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -46,7 +46,7 @@ metadata:
   description: Adani Cements - Plant Operations, Supply Chain, Quality Control
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -57,7 +57,7 @@ metadata:
   description: Adani Group HR - Workforce Management, Recruitment, Payroll
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -68,7 +68,7 @@ metadata:
   description: Adani Green Energy (AGEL) - Solar and Wind Generation, Grid, Sustainability
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -79,7 +79,7 @@ metadata:
   description: Adani Ports and SEZ - Vessel Operations, Cargo, Berth Planning
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -90,7 +90,7 @@ metadata:
   description: Adani Realty - Real Estate Sales, Construction, Leasing
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -101,7 +101,7 @@ metadata:
   description: Adani AI Labs - ML Ops, Model Registry, Research and Experiments
 spec:
   type: team
-  parent: edl-platform-team
+  parent: adani-group
   children: []
 
 ---
@@ -110,6 +110,26 @@ kind: User
 metadata:
   name: guest
 spec:
-  memberOf: [edl-platform-team]
+  memberOf: [adani-group]
 
 ---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: yogeshahuja-dev
+spec:
+  profile:
+    displayName: Yogesh Ahuja
+    email: yogesh.ahuja@adani.com
+  memberOf: [edl-corp-group-it-team]
+
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: mihirs910
+spec:
+  profile:
+    displayName: Mihir Sharma
+    email: mihir.sharma@adani.com
+  memberOf: [bdl-realty-team]

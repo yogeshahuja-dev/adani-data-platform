@@ -27,6 +27,5 @@ spec:
   type: dashboard
   lifecycle: development
   owner: bdl-realty-team
-  system: bdl-realty
   dependsOn:
-  - resource:bdl-realty-dev-workspace
+  - resource:default/bdl-realty-dev-workspace

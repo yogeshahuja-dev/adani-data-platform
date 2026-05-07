@@ -26,6 +26,5 @@ spec:
   type: genie
   lifecycle: production
   owner: bdl-nr-team
-  system: bdl-nr
   dependsOn:
-  - resource:bdl-nr-prod-workspace
+  - resource:default/bdl-nr-prod-workspace

@@ -27,6 +27,5 @@ spec:
   type: data-product
   lifecycle: development
   owner: bdl-agel-team
-  system: bdl-agel
   dependsOn:
-  - resource:bdl-agel-dev-workspace
+  - resource:default/bdl-agel-dev-workspace

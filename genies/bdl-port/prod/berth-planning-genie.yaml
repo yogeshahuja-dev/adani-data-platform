@@ -26,6 +26,5 @@ spec:
   type: genie
   lifecycle: production
   owner: bdl-port-team
-  system: bdl-port
   dependsOn:
-  - resource:bdl-port-prod-workspace
+  - resource:default/bdl-port-prod-workspace

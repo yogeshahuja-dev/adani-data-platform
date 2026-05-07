@@ -27,6 +27,5 @@ spec:
   type: dashboard
   lifecycle: production
   owner: bdl-cements-team
-  system: bdl-cements
   dependsOn:
-  - resource:bdl-cements-prod-workspace
+  - resource:default/bdl-cements-prod-workspace

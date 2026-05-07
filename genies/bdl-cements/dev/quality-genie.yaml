@@ -26,6 +26,5 @@ spec:
   type: genie
   lifecycle: development
   owner: bdl-cements-team
-  system: bdl-cements
   dependsOn:
-  - resource:bdl-cements-dev-workspace
+  - resource:default/bdl-cements-dev-workspace

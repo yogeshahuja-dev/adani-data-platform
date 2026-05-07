@@ -27,6 +27,5 @@ spec:
   type: data-product
   lifecycle: development
   owner: edl-corp-group-it-team
-  system: edl-corp-group-it
   dependsOn:
-  - resource:edl-corp-group-it-dev-workspace
+  - resource:default/edl-corp-group-it-dev-workspace

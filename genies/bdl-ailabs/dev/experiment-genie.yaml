@@ -26,6 +26,5 @@ spec:
   type: genie
   lifecycle: development
   owner: bdl-ailabs-team
-  system: bdl-ailabs
   dependsOn:
-  - resource:bdl-ailabs-dev-workspace
+  - resource:default/bdl-ailabs-dev-workspace

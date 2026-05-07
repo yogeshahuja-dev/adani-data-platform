@@ -295,8 +295,7 @@ def generate_genies():
                         "type": "genie",
                         "lifecycle": lifecycle,
                         "owner": sys_info["team"],
-                        "system": sys_id,
-                        "dependsOn": [f"resource:{sys_id}-{env}-workspace"],
+                        "dependsOn": [f"resource:default/{sys_id}-{env}-workspace"],
                     },
                 }
                 save_yaml(f"genies/{sys_id}/{env}/{genie['name']}.yaml", entity)
@@ -331,8 +330,7 @@ def generate_data_products():
                         "type": "data-product",
                         "lifecycle": lifecycle,
                         "owner": sys_info["team"],
-                        "system": sys_id,
-                        "dependsOn": [f"resource:{sys_id}-{env}-workspace"],
+                        "dependsOn": [f"resource:default/{sys_id}-{env}-workspace"],
                     },
                 }
                 save_yaml(f"data-products/{sys_id}/{env}/{dp['name']}.yaml", entity)
@@ -367,8 +365,7 @@ def generate_dashboards():
                         "type": "dashboard",
                         "lifecycle": lifecycle,
                         "owner": sys_info["team"],
-                        "system": sys_id,
-                        "dependsOn": [f"resource:{sys_id}-{env}-workspace"],
+                        "dependsOn": [f"resource:default/{sys_id}-{env}-workspace"],
                     },
                 }
                 save_yaml(f"dashboards/{sys_id}/{env}/{db['name']}.yaml", entity)

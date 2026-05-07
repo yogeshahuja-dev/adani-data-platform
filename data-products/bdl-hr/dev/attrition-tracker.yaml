@@ -27,6 +27,5 @@ spec:
   type: data-product
   lifecycle: development
   owner: bdl-hr-team
-  system: bdl-hr
   dependsOn:
-  - resource:bdl-hr-dev-workspace
+  - resource:default/bdl-hr-dev-workspace

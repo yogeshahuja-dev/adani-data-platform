@@ -27,6 +27,5 @@ spec:
   type: data-product
   lifecycle: production
   owner: bdl-realty-team
-  system: bdl-realty
   dependsOn:
-  - resource:bdl-realty-prod-workspace
+  - resource:default/bdl-realty-prod-workspace
