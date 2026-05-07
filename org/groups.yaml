@@ -15,7 +15,8 @@ spec:
     - bdl-port-team
     - bdl-realty-team
     - bdl-ailabs-team
-
+    - bdl-atgl-team
+    
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Group
