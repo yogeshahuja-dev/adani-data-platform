@@ -8,7 +8,7 @@ metadata:
     - dashboard
     - register
 spec:
-  owner: edl-platform-team
+  owner: adani-group
   type: dashboard
   parameters:
     - title: Dashboard Details

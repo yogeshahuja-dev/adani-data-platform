@@ -8,7 +8,7 @@ metadata:
     - data-product
     - register
 spec:
-  owner: edl-platform-team
+  owner: adani-group
   type: data-product
   parameters:
     - title: Data Product Details

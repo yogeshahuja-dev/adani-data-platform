@@ -9,7 +9,7 @@ metadata:
     - ai-agent
     - register
 spec:
-  owner: edl-platform-team
+  owner: adani-group
   type: genie
   parameters:
     - title: Genie Details
