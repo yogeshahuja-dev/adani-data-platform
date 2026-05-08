@@ -18,6 +18,7 @@ spec:
         - description
         - businessSystem
         - environment
+        - dashboardUrl
       properties:
         dashboardName:
           title: Dashboard Identifier
@@ -68,6 +69,11 @@ spec:
           type: string
           description: e.g. CXO, Operations team, Plant managers
           default: Business stakeholders
+        dashboardUrl:
+          title: Dashboard URL
+          type: string
+          description: Direct link to the Dashboard in Databricks workspace (paste full URL)
+          ui:placeholder: https://adb-xxx.azuredatabricks.net/sql/dashboards/...
   steps:
     - id: log
       name: Register Dashboard
@@ -81,6 +87,7 @@ spec:
           System: ${{ parameters.businessSystem }}
           Environment: ${{ parameters.environment }}
           Audience: ${{ parameters.audience }}
+          URL: ${{ parameters.dashboardUrl }}
           Description: ${{ parameters.description }}
 
           Generated catalog-info.yaml:
@@ -90,6 +97,10 @@ spec:
           metadata:
             name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dashboardName }}
             title: "${{ parameters.dashboardTitle }} (${{ parameters.environment }})"
+            links:
+              - url: ${{ parameters.dashboardUrl }}
+                title: Open Dashboard
+                icon: dashboard
           spec:
             type: dashboard
             lifecycle: ${{ parameters.environment }}
@@ -102,6 +113,9 @@ spec:
         listWorkspace: true
   output:
     links:
+      - title: Open Dashboard
+        icon: dashboard
+        url: ${{ parameters.dashboardUrl }}
       - title: View All Dashboards
         icon: catalog
         url: /catalog?filters[kind]=component&filters[type]=dashboard

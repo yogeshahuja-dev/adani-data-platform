@@ -19,6 +19,7 @@ spec:
         - businessSystem
         - environment
         - domain
+        - dpUrl
       properties:
         dpName:
           title: Data Product Identifier
@@ -78,6 +79,11 @@ spec:
           type: string
           description: Who uses this data product?
           default: Business stakeholders
+        dpUrl:
+          title: Data Product URL
+          type: string
+          description: Direct link to the Data Product in Databricks workspace (paste full URL)
+          ui:placeholder: https://adb-xxx.azuredatabricks.net/explore/data/...
   steps:
     - id: log
       name: Register Data Product
@@ -93,6 +99,7 @@ spec:
           Domain: ${{ parameters.domain }}
           SLA: ${{ parameters.sla }}
           Consumers: ${{ parameters.consumers }}
+          URL: ${{ parameters.dpUrl }}
           Description: ${{ parameters.description }}
 
           Generated catalog-info.yaml:
@@ -102,6 +109,10 @@ spec:
           metadata:
             name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.dpName }}
             title: "${{ parameters.dpTitle }} (${{ parameters.environment }})"
+            links:
+              - url: ${{ parameters.dpUrl }}
+                title: Open Data Product
+                icon: dashboard
           spec:
             type: data-product
             lifecycle: ${{ parameters.environment }}
@@ -114,6 +125,9 @@ spec:
         listWorkspace: true
   output:
     links:
+      - title: Open Data Product
+        icon: dashboard
+        url: ${{ parameters.dpUrl }}
       - title: View All Data Products
         icon: catalog
         url: /catalog?filters[kind]=component&filters[type]=data-product

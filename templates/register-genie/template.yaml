@@ -20,6 +20,7 @@ spec:
         - businessSystem
         - environment
         - domain
+        - genieUrl
       properties:
         genieName:
           title: Genie Identifier
@@ -69,6 +70,11 @@ spec:
           title: Domain
           type: string
           description: Business domain (e.g. finance, operations, analytics)
+        genieUrl:
+          title: Genie URL
+          type: string
+          description: Direct link to the Genie agent in Databricks workspace (paste full URL)
+          ui:placeholder: https://adb-xxx.azuredatabricks.net/genie/spaces/01ef...
   steps:
     - id: log
       name: Register Genie
@@ -82,6 +88,7 @@ spec:
           System: ${{ parameters.businessSystem }}
           Environment: ${{ parameters.environment }}
           Domain: ${{ parameters.domain }}
+          URL: ${{ parameters.genieUrl }}
           Description: ${{ parameters.description }}
 
           Generated catalog-info.yaml:
@@ -91,6 +98,10 @@ spec:
           metadata:
             name: ${{ parameters.businessSystem }}-${{ parameters.environment }}-${{ parameters.genieName }}
             title: "${{ parameters.genieTitle }} (${{ parameters.environment }})"
+            links:
+              - url: ${{ parameters.genieUrl }}
+                title: Open Genie
+                icon: dashboard
           spec:
             type: genie
             lifecycle: ${{ parameters.environment }}
@@ -103,6 +114,9 @@ spec:
         listWorkspace: true
   output:
     links:
+      - title: Open Genie
+        icon: dashboard
+        url: ${{ parameters.genieUrl }}
       - title: View All Genies
         icon: catalog
         url: /catalog?filters[kind]=component&filters[type]=genie
